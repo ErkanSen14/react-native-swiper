@@ -168,8 +168,11 @@ module.exports = React.createClass({
   autoplayTimer: null,
 
   componentWillReceiveProps(props) {
-    this.setState(this.initState(props))
-  },
+    this.setState(this.initState(props));    
+    if(props.yourNewPageIndex){
+      this.scrollBy(props.yourNewPageIndex)
+    }
+},
 
   componentDidMount() {
     this.autoplay()
